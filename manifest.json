@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Lollygag",
+  "description": "Stop lollygagging and get back to effing work.  This extension helps you stay focused by blocking your favorite time-wasting websites.",
+  "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": ["js/background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "http://www.dailyinspirationalquotes.in/*"
+  ],
+  "browser_action": {
+    "default_icon": "img/icons/icon16.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "img/icons/icon16.png",
+    "48": "img/icons/icon48.png",
+    "128": "img/icons/icon128.png"
+  }
+}

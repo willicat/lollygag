@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lollygag.in Settings</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script src="js/popup.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <!-- Jumbotron showing status of extension -->
+      <div class="jumbotron">
+        <h1>Lollygag</h1>
+        <p>
+          <a class="btn btn-lg btn-warning" href="javascript:void(0);" role="button" id="isActiveButton">Turn off</a>
+        </p>
+      </div>
+
+      <!-- Error block -->
+      <div class="alert alert-warning" id="errorDiv" style="display:none;"></div>
+
+      <!-- Sites container -->
+      <div id="sitesContainer">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <input type="text" id="siteUrlInput" name="siteUrlInput" class="form-control pull-left" style="width:300px;" placeholder="URL (facebook.com, espn.go.com, etc..)" value="" />
+            <button class="btn btn-sm btn-primary pull-right" id="addSiteButton"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Site</button>
+          </div>
+        </div>
+
+        <!-- Blocked sites panel and list-group -->
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+            Blocked Sites <span id="sitesCount"></span>
+          </div>
+
+          <!-- List group -->
+          <ul class="list-group" id="listGroupSites">
+            <li class="list-group-item">
+              No sites found.  <em>Click 'Add Site' to add a new blocked site.</em>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
+
