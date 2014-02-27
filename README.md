@@ -26,4 +26,4 @@ Authors
 And That's Not All!
 -------------------
 
-Read [my blog post](http://yorkstreetlabs.com/lollygag-and-wasted-development-time) for more back story.
+Read [my blog post](http://yorkstreetlabs.com/blog/the-internet-is-full-of-distraction-lets-lollygag) for more back story.
