@@ -89,7 +89,7 @@ var view = {
         obj.render();
       } 
       else {
-        isActiveButton.innerHTML = 'Turn on';
+        isActiveButton.innerHTML = '<span class="glyphicon glyphicon-record"></span> Turn on';
         sitesContainer.style.display = 'none';
         isActiveButton.classList.remove('btn-warning');
         isActiveButton.classList.add('btn-success');
@@ -116,7 +116,7 @@ var view = {
         site_el.className = 'list-group-item';
 
         // add innerHTML
-        site_el.innerHTML = obj.sites[i];
+        site_el.innerHTML = obj.sites[i].url;
 
         // add child remove button
         var remove_btn = document.createElement('button');
@@ -138,6 +138,18 @@ var view = {
         };
 
         site_el.appendChild(remove_btn);
+
+        // add blocked count and last attempt timestamp
+        if(obj.sites[i].blocked.length > 0) {
+          // grab last block attempt timestamp
+          var date = new Date(obj.sites[i].blocked[obj.sites[i].blocked.length - 1].date);
+
+          var blocked_container = document.createElement('small');
+
+          blocked_container.innerHTML = '<br>'+obj.sites[i].blocked.length+' block(s) | Last attempt: '+date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+
+          site_el.appendChild(blocked_container);
+        }
 
         listGroupSites.appendChild(site_el);        
       }
@@ -169,8 +181,14 @@ var view = {
     }
 
     if(errorDiv.style.display != 'block') {
+      // create JS obj
+      var site = {
+        url: value, // site url
+        blocked: [] // collection storing each attempt
+      };
+
       // add to sites
-      obj.sites.push(value);
+      obj.sites.push(site);
 
       // update 
       dataAccessManager.update('sites', obj.sites);
@@ -193,7 +211,7 @@ var view = {
     if(obj.isActive) {
       obj.isActive = false;
 
-      isActiveButton.innerHTML = 'Turn on';
+      isActiveButton.innerHTML = '<span class="glyphicon glyphicon-record"></span> Turn on';
       isActiveButton.classList.remove('btn-warning');
       isActiveButton.classList.add('btn-success');
 
@@ -202,7 +220,7 @@ var view = {
     else {
       obj.isActive = true;
 
-      isActiveButton.innerHTML = 'Turn off';
+      isActiveButton.innerHTML = '<span class="glyphicon glyphicon-off"></span> Turn off';
       isActiveButton.classList.remove('btn-success');
       isActiveButton.classList.add('btn-warning');
 

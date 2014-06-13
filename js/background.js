@@ -31,7 +31,18 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
     if(isActive) {
     	for(var i = 0;i < sites.length; i++) {
-    		if(changeInfo.url.indexOf(sites[i]) != -1) {
+    		if(changeInfo.url.indexOf(sites[i].url) != -1) {
+          // add attempt to sites blocked collection
+          var block = {
+            date: new Date().getTime()
+          };
+
+          // add to site's blocked collection
+          sites[i].blocked.push(block);
+
+          // update
+          dataAccessManager.update('sites', sites);
+
 					// if changeInfo url matches one of stored, redirect to gbtw.me
 					chrome.tabs.update({ url: 'http://www.dailyinspirationalquotes.in/' });
 				}
