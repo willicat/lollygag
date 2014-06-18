@@ -116,7 +116,7 @@ var view = {
         site_el.className = 'list-group-item';
 
         // add innerHTML
-        site_el.innerHTML = obj.sites[i].url;
+        site_el.innerHTML = '<strong>'+obj.sites[i].url+'</strong>';
 
         // add child remove button
         var remove_btn = document.createElement('button');
