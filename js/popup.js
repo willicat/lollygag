@@ -89,7 +89,7 @@ var view = {
         obj.render();
       } 
       else {
-        isActiveButton.innerHTML = '<span class="glyphicon glyphicon-record"></span> Turn on';
+        isActiveButton.innerHTML = '<span class="glyphicon glyphicon-off"></span> Turn on';
         sitesContainer.style.display = 'none';
         isActiveButton.classList.remove('btn-warning');
         isActiveButton.classList.add('btn-success');
@@ -211,7 +211,7 @@ var view = {
     if(obj.isActive) {
       obj.isActive = false;
 
-      isActiveButton.innerHTML = '<span class="glyphicon glyphicon-record"></span> Turn on';
+      isActiveButton.innerHTML = '<span class="glyphicon glyphicon-off"></span> Turn on';
       isActiveButton.classList.remove('btn-warning');
       isActiveButton.classList.add('btn-success');
 
