@@ -123,7 +123,7 @@ var view = {
 
         remove_btn.className = 'btn btn-xs btn-warning pull-right';
         remove_btn.setAttribute('data-row' , i);
-        remove_btn.innerHTML = 'Remove';
+        remove_btn.innerHTML = '<span class="glyphicon glyphicon-remove"></span>&nbsp; Remove';
 
         // bind event
         remove_btn.onclick = function(event) {
