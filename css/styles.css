@@ -7,6 +7,11 @@ h1, h2, h3, h4, h5 {
     text-shadow: 2px 2px 0px hsl(0, 0%, 94%);
 }
 
+h1 {
+    font-family: 'Changa One', sans-serif;
+    font-size: 70px;
+}
+
 div.jumbotron {
 	background: #fff;
 	color: #000;
