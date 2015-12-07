@@ -44,7 +44,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
           dataAccessManager.update('sites', sites);
 
 					// if changeInfo url matches one of stored, redirect to gbtw.me
-					chrome.tabs.update({ url: 'http://www.dailyzen.com/' });
+					chrome.tabs.update({ url: 'https://en.wikipedia.org/wiki/Special:Random' });
 				}
     	}
     }
